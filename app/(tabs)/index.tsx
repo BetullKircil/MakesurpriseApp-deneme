@@ -1,70 +1,105 @@
-import { Image, StyleSheet, Platform } from 'react-native';
+import { StyleSheet} from 'react-native'
+import React from 'react'
+import MainScreen from '../../src/screens/MainScreen'
+import SignupScreen from '../../src/screens/SignupScreen'
+import LoginScreen from '../../src/screens/LoginScreen'
+import CalendarScreen from '../../src/screens/CalenderScreen'
+import HomePageScreen from '../../src/screens/HomePageScreen'
+import UserProfileScreen from '../../src/screens/UserProfileScreen' 
+import UserProfileInfoScreen from '../../src/screens/UserProfileInfoScreen'
+import UserCustomizeSurpriseScreen from '../../src/screens/UserCustomizeSurpriseScreen' 
+import UserAddressInfoScreen from '../../src/screens/UserAddressInfoScreen'
+import CargoTrackingScreen from '../../src/screens/CargoTrackingScreen'
+import EMailChangeScreen from '../../src/screens/EMailChangeScreen' 
+import AnnouncementPreferencesScreen from '../../src/screens/AnnouncementPreferencesScreen'
+import PasswordChangeScreen from '../../src/screens/PasswordChangeScreen'
+import LogoutScreen from '../../src/screens/LogoutScreen'
+import SurveyScreen from '../../src/screens/SurveyScreen'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'  
+const Stack = createNativeStackNavigator();
 
-import { HelloWave } from '@/components/HelloWave';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
-
-export default function HomeScreen() {
+const index = () => {
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
+    <Stack.Navigator initialRouteName="Main">
+        <Stack.Screen 
+          name="Main" 
+          component={MainScreen} 
+          options={{ headerShown: false }} 
         />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({ ios: 'cmd + d', android: 'cmd + m' })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-        <ThemedText>
-          Tap the Explore tab to learn more about what's included in this starter app.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          When you're ready, run{' '}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
-  );
+        <Stack.Screen 
+          name="Signup" 
+          component={SignupScreen} 
+          options={{ headerShown: false }} 
+        />
+        <Stack.Screen 
+          name="Login" 
+          component={LoginScreen} 
+          options={{ headerShown: false }} 
+        />
+        <Stack.Screen 
+          name="HomePageScreen" 
+          component={HomePageScreen} 
+          options={{ headerShown: false }} 
+        />
+        <Stack.Screen 
+          name="CalendarScreen" 
+          component={CalendarScreen} 
+          options={{ headerShown: false }} 
+        />
+        <Stack.Screen 
+          name="UserCustomizeSurpriseScreen" 
+          component={UserCustomizeSurpriseScreen} 
+          options={{ headerShown: false }} 
+        />
+        <Stack.Screen 
+          name="UserProfileScreen" 
+          component={UserProfileScreen} 
+          options={{ headerShown: false }} 
+        /> 
+        <Stack.Screen 
+          name="UserProfileInfoScreen" 
+          component={UserProfileInfoScreen} 
+          options={{ headerShown: false }} 
+        />  
+        <Stack.Screen 
+          name="UserAddressInfoScreen" 
+          component={UserAddressInfoScreen} 
+          options={{ headerShown: false }} 
+        /> 
+        <Stack.Screen 
+          name="CargoTrackingScreen" 
+          component={CargoTrackingScreen} 
+          options={{ headerShown: false }} 
+        /> 
+        <Stack.Screen 
+          name="EMailChangeScreen" 
+          component={EMailChangeScreen} 
+          options={{ headerShown: false }} 
+        />  
+        <Stack.Screen 
+          name="PasswordChangeScreen" 
+          component={PasswordChangeScreen} 
+          options={{ headerShown: false }} 
+        /> 
+        <Stack.Screen 
+          name="AnnouncementPreferencesScreen" 
+          component={AnnouncementPreferencesScreen} 
+          options={{ headerShown: false }} 
+        />
+        <Stack.Screen 
+          name="LogoutScreen" 
+          component={LogoutScreen} 
+          options={{ headerShown: false }} 
+        />
+        <Stack.Screen 
+          name="SurveyScreen" 
+          component={SurveyScreen} 
+          options={{ headerShown: false }} 
+        />
+      </Stack.Navigator>
+  )
 }
 
-const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
-  },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
-  },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
-  },
-});
+export default index
+
+const styles = StyleSheet.create({})
